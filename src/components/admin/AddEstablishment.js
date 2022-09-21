@@ -50,7 +50,7 @@ export default function AddEstablishment() {
     console.log(formDataToSend);
 
     //holidaze-heroku-api.herokuapp.com/api/stays
-    https: axios
+     axios
       .post(api, { formDataToSend })
       .then((res) => {
         console.log(res.data);
