@@ -1,0 +1,28 @@
+
+
+.stay-image {
+  width: 340px;
+  height: 340px;
+  object-fit: cover;
+  border-radius: 5px;
+  box-shadow: darkgrey 20px;
+}
+.loading {
+  text-align: center;
+  width: 50px;
+  height: 50px;
+  margin: 10px auto;
+  border: 5px solid rgb(0, 128, 0, 0.5);
+
+  border-radius: 50%;
+
+  border-color: red;
+  border-left-color: lightblue;
+  animation: spin 1s infinite;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
