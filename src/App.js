@@ -1,13 +1,19 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Home from "./components/home/Home";
-import Contact from "./components/contact/Contact";
-import Login from "./components/login/Login";
-import Details from "./components/details/Details";
-import Admin from "./components/admin/Admin";
+import Home from "./pages/home/Home";
+import Stays from "./pages/stays/Stays";
+import Contact from "./pages/contact/Contact";
+import Login from "./pages/login/Login";
+import Details from "./pages/details/Details";
+import Inquiry from "./pages/inquiry/Inquiry";
+import InquiryDetails from "./pages/inquiry/InquiryDetails";
+import ContactMessage from "./pages/contactMessage/ContactMessage";
+import ContactMessageDetails from "./pages/contactMessage/ContactMessageDetails";
+import Establishment from "./pages/establishment/establishment";
+import Admin from "./pages/admin/Admin";
 import Nav from "./components/layout/Navigation";
 import { AuthProvider } from "./context/AuthContext";
-import "./App.css";
+import "./sass/style.scss";
 
 function App() {
   return (
@@ -17,6 +23,9 @@ function App() {
         <Switch>
           <Route exact path="/">
             <Home />
+          </Route>
+          <Route path="/stays">
+            <Stays />
           </Route>
           <Route path="/contact">
             <Contact />
@@ -29,6 +38,21 @@ function App() {
           </Route>
           <Route path="/details/:id">
             <Details />
+          </Route>
+          <Route path="/inquiry">
+            <Inquiry />
+          </Route>
+          <Route path="/inquiryDetails/:id">
+            <InquiryDetails />
+          </Route>
+          <Route path="/contactMessage">
+            <ContactMessage />
+          </Route>
+          <Route path="/contactMessageDetails/:id">
+            <ContactMessageDetails />
+          </Route>
+          <Route path="/establishment">
+            <Establishment />
           </Route>
         </Switch>
       </Router>

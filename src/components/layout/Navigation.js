@@ -3,6 +3,7 @@ import { useHistory, NavLink } from "react-router-dom";
 import AuthContext from "../../context/AuthContext";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
+import SearchBar from "../../hooks/Search";
 
 function Navigation() {
   const [auth, setAuth] = useContext(AuthContext);
@@ -15,15 +16,18 @@ function Navigation() {
   }
 
   return (
-    <Navbar bg="dark" variant="dark" expand="lg">
+    <Navbar expand="lg">
       <NavLink to="/" exact>
-        <Navbar.Brand>Animal Kingdom</Navbar.Brand>
+        <Navbar.Brand>Holidaze</Navbar.Brand>
       </NavLink>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav>
           <NavLink to="/" className="nav-link">
             Home
+          </NavLink>
+          <NavLink to="/stays" className="nav-link">
+            Stays
           </NavLink>
           <NavLink to="/contact" className="nav-link">
             Contact
@@ -41,6 +45,7 @@ function Navigation() {
             </NavLink>
           )}
         </Nav>
+        <SearchBar />
       </Navbar.Collapse>
     </Navbar>
   );
