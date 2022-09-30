@@ -1,0 +1,9 @@
+
+
+.stay-image {
+        width: 340px;
+        height: 340px;
+        object-fit: cover;
+        border-radius: 5px;
+        @extend .background-shadow;
+}

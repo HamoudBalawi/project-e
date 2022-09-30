@@ -5,8 +5,7 @@ import axios from "axios";
 const API = process.env.REACT_APP_BASE_URL + "/api/stays?populate=image";
 
 export default function SearchBar() {
-  const [searchedItem, setSearchedItem] = useState("");
-  const [filteredSingleId, setFilteredSingleId] = useState([]);
+  const [allItems, setAllItems] = useState([]);
   const [filteredItems, setFilteredItems] = useState([]);
 
   useEffect(function () {
@@ -17,41 +16,37 @@ export default function SearchBar() {
         return stay;
       });
 
-      setFilteredSingleId(items);
+      setAllItems(items);
     }
 
     getStays();
   }, []);
 
   const filter = (event) => {
-    const searchedItem = event.target.value;
-    setSearchedItem(searchedItem);
-
-    const filteredId = filteredSingleId.filter((value) => {
-      return value.attributes.name.trim().toLowerCase().includes(searchedItem.trim().toLowerCase());
-    });
-    setFilteredSingleId(filteredId);
-    console.log("filtred name", filteredId);
+    const searchedItem = event.target.value.trim();
 
     if (searchedItem === "") {
-      setFilteredItems([]);
-    } else {
-      setFilteredItems(filteredSingleId);
+      return setFilteredItems([]);
     }
-  };
 
+    const filteredHotels = allItems.filter((value) => {
+      return value.attributes.name.trim().toLowerCase().includes(searchedItem.toLowerCase());
+    });
+
+    setFilteredItems(filteredHotels);
+  };
   return (
     <div className="search">
-      <div>
-        <input type="text" placeholder="Search..." value={searchedItem} onChange={filter} />
-        <div className="searchIcon"></div>
+      <div className="search-input">
+        <input type="text" placeholder="Search..." onChange={filter} />
+        <div className="search-icon"></div>
       </div>
       {filteredItems.length !== 0 && (
-        <div className="resultResult">
-          {filteredSingleId.map((items) => {
+        <div className="search-result">
+          {filteredItems.map((items) => {
             return (
               <div key={items.id}>
-                <Link className="dataItem" to={`details/${items.id}`}>
+                <Link className="data-items" to={`details/${items.id}`}>
                   <p> {items.attributes.name} </p>
                 </Link>
               </div>

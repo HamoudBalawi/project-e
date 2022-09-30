@@ -1,0 +1,138 @@
+h1, h2, h3, h4 {
+  font-family: "Forma DJR Display", sans-serif;
+}
+
+p {
+  font-family: "Lato", Arial;
+  font-size: 17px;
+}
+
+a,
+link {
+  text-decoration: none;
+}
+
+p {
+  color: #2B2D3C;
+}
+
+body {
+  margin: 0 auto;
+  font-family: "Forma DJR Display", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #F2EEEB;
+  max-width: 1280px;
+}
+
+.stay-image {
+  width: 340px;
+  height: 340px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 5px;
+  -webkit-box-shadow: darkgrey 20px;
+          box-shadow: darkgrey 20px;
+}
+
+.loading {
+  text-align: center;
+  width: 50px;
+  height: 50px;
+  margin: 10px auto;
+  border-radius: 50%;
+  border-color: red;
+  border-left-color: lightblue;
+  -webkit-animation: spin 1s infinite;
+          animation: spin 1s infinite;
+}
+
+@-webkit-keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+.search {
+  position: relative;
+}
+
+.resultResult {
+  position: absolute;
+  background-color: #FFFFFF;
+  width: 200px;
+  height: 250px;
+  border-radius: 0 0 5px 5px;
+  overflow: scroll;
+  z-index: 1;
+}
+
+.footer-common-style, footer, .destinations-items {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(250px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+footer {
+  background-color: #2B2D3C;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  grid-gap: 10px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 15px;
+  text-align: center;
+}
+
+footer p {
+  color: #FFFFFF;
+}
+
+.stays-names {
+  padding-left: 40px;
+}
+
+.banner {
+  padding: 3px 0;
+  position: relative;
+}
+
+.banner img {
+  width: 100%;
+  max-height: 500px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 5px;
+}
+
+.banner h1 {
+  position: absolute;
+  top: 50%;
+  color: #FFFFFF;
+  -webkit-transform: translate(60%);
+          transform: translate(60%);
+}
+
+.cover {
+  background-color: #2B2D3C;
+  width: 100%;
+  max-height: 500px;
+  min-height: 500px;
+  opacity: 60%;
+  position: absolute;
+}
+
+.footer-items {
+  width: 400px;
+}
+/*# sourceMappingURL=style.css.map */

@@ -28,7 +28,6 @@ export default function StayDetails() {
           const response = await axios.get(API_URL);
 
           setStay(response.data.data);
-          console.log(response.data.data);
         } catch (error) {
           setError(error.toString());
         } finally {
@@ -45,17 +44,17 @@ export default function StayDetails() {
         <Loading />
       ) : stay ? (
         <>
-          {stay.attributes.image.data.map((images, index) => {
-            return (
-              <div key={index}>
-                <Carousel>
-                  <Carousel.Item>
-                    <img className="stay-image" src={images.attributes.url} alt={""} />
-                  </Carousel.Item>
-                </Carousel>
-              </div>
-            );
-          })}
+          <Carousel>
+            {stay.attributes.image.data.map((images) => {
+              return (
+                <Carousel.Item>
+                  <div key={stay.id}>
+                    <img src={images.attributes.url} alt={stay.attributes.name} />
+                  </div>
+                </Carousel.Item>
+              );
+            })}
+          </Carousel>
           <div key={stay.id} className="wrapper">
             <h2 key={stay.id}>{stay.attributes.name}</h2>
             <p>{stay.attributes.description}</p>

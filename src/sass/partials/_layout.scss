@@ -1,19 +1,37 @@
+*{
+    box-sizing: border-box;
+}
+
+html, body{
+height: 100%;
+}
+
 body {
     margin: 0 auto;
     font-family:$font-primary;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-color: white;
     max-width: 1280px;
 
 }
 
-.stay-image {
-    width: 340px;
-    height: 340px;
-    object-fit: cover;
-    border-radius: 5px;
-    box-shadow: darkgrey 20px;
+#root {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.body-container {
+    width: 100%;
+    max-width: 0 auto;
+}
+
+.wrapper {
+    flex: 1 0 auto;
+}
+
+.nav-links {
+   margin: 7px 10px 0;
 }
 
 .loading {
@@ -21,12 +39,9 @@ body {
     width: 50px;
     height: 50px;
     margin: 10px auto;
-    //border: 5px solid rgb(0, 128, 0, 0.5);
-
     border-radius: 50%;
-
-    border-color: red;
-    border-left-color: lightblue;
+    border-color: getColour(secondary-colour);
+    border-left-color: getColour(blue-navy);
     animation: spin 1s infinite;
 }
 
@@ -36,19 +51,74 @@ body {
     }
 }
 
-.search {
+.header {
+    padding-left: 20px;
+    @extend .background-shadow;
 
+}
+
+.company-name {
+    color:getColour(secondary-colour);
+    font-size:25px;
+}
+
+.nav-common-style {
+    position: absolute;
+}
+.login {
+   @extend .nav-common-style;
+    right: 15px;
+    top: 8px;
+}
+
+.search {
+    @extend .nav-common-style;
+    right: 110px;
+}
+.search-input input{
+    text-decoration: none;
+    border:1px solid getColour(light-grey-colour);
+    border-radius: 5px;
+    height: 40px;
+    width: 200px;
     position: relative;
 
 }
 
-.resultResult {
+.search-result {
     position: absolute;
-    background-color: white;
-    width: 230px;
-    height: 250px;
+    background-color:getColour(primary-colour);
+    width: 200px;
+    max-width: 250px;
     border-radius: 0 0 5px 5px;
     overflow: scroll;
     z-index: 1;
+    margin-top: -2px;
+    padding-left:10px ;
+}
+
+.footer-common-style {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+footer  {
+    @extend .footer-common-style;
+    background-color:getColour(blue-navy);
+    flex-shrink: 0;
+    grid-gap: 10px;
+    align-items: center;
+    padding: 15px;
+    text-align: center;
+
+}
+
+footer p, footer h4 {
+    color: getColour(primary-colour);
+}
+
+
+.destinations-items {
+    @extend .footer-common-style;    
 }
 

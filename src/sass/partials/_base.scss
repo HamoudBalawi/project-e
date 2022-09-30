@@ -1,4 +1,18 @@
-$color-primary:white;
-$color-secondary:#2B2D3C;
+$colours: (
+    primary-colour:#FFFFFF,
+    secondary-colour: #A93E46,
+    blue-navy:#2B2D3C,
+    grey-colour:#707070,
+    light-grey-colour:#989898,
+    complimentary-colour:#EDEDED,
+);
+
+@function getColour($colour) {
+    @return map-get($colours , $colour )
+}
 $font-primary: "Forma DJR Display", sans-serif;
 $font-secondary: "Lato", Arial;
+
+.background-shadow {
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}

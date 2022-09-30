@@ -44,9 +44,9 @@ export default function RenderBanner() {
           <div key={stays.id}>
             <Link to={`stays`}>
               <div className="banner">
-                <div className="cover"></div>
-                <img src={stay.attributes.url} alt={""} />
+                <button>Find yout stay</button>
                 <h1>{stays.attributes.slogan}</h1>
+                <img src={stay.attributes.url} alt={""} />
               </div>
             </Link>
           </div>

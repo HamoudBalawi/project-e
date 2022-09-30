@@ -3,7 +3,7 @@ import { useHistory, NavLink } from "react-router-dom";
 import AuthContext from "../../context/AuthContext";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
-import SearchBar from "../../hooks/Search";
+import SearchBar from "../../components/search/Search";
 
 function Navigation() {
   const [auth, setAuth] = useContext(AuthContext);
@@ -16,9 +16,9 @@ function Navigation() {
   }
 
   return (
-    <Navbar expand="lg">
+    <Navbar className="header" expand="lg">
       <NavLink to="/" exact>
-        <Navbar.Brand>Holidaze</Navbar.Brand>
+        <Navbar.Brand className="company-name">Holidaze</Navbar.Brand>
       </NavLink>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
@@ -37,10 +37,12 @@ function Navigation() {
               <NavLink to="/admin" className="nav-link">
                 Admin
               </NavLink>
-              <button onClick={logout}>Log out</button>
+              <NavLink onClick={logout} to="/" className="nav-link login">
+                Log out
+              </NavLink>
             </>
           ) : (
-            <NavLink to="/login" className="nav-link">
+            <NavLink to="/login" className="nav-link login">
               Login
             </NavLink>
           )}

@@ -1,4 +1,4 @@
-import RenderStays from "../../components/renderContents/home/RenderStays";
+import RenderStays from "../../components/renderContents/stays/RenderStays";
 
 export default function Stays() {
   return <RenderStays />;

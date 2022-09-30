@@ -1,6 +1,8 @@
+
 .banner {
     padding: 3px 0;
     position: relative;
+    margin-bottom:20px ;
 }
 
 .banner img {
@@ -9,17 +11,130 @@
     object-fit: cover;
     border-radius: 5px;
 }
-.banner h1 {
+
+.banner-common-style {
     position: absolute;
-    top: 50%;
-    color:$color-primary;
-    transform: translate(60%);
 }
-.cover {
-    background-color: $color-secondary;
-    width: 100%;
-    max-height: 500px;
-    min-height: 500px;
-    opacity: 60%;
+
+.banner h1 {
+    @extend .banner-common-style;
+    top: 35%;
+    color:getColour(primary-colour);
+    padding-left:70px;
+ 
+}
+
+.banner button {
+@extend .banner-common-style;
+   top: 50%;
+   margin-left: 70px;
+   text-decoration: none;
+   background-color: getColour(secondary-colour);
+   border:getColour(primary-colour) 1px solid;
+   color: getColour(primary-colour);
+   padding: 7px;
+   border-radius: 5px;
+
+}
+
+.banner button:hover {
+   background-color: getColour(blue-navy);
+}
+
+.banner::before {
+    content: "";
+    background-color: getColour(blue-navy);
     position: absolute;
+    display: block;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right:0;
+    opacity: 60%;
+    
+
+}
+
+.stays-names, .destination-title{
+    padding-left: 40px;
+
+}
+.comon-flex {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+
+}
+
+.single-hotel {
+    @extend .comon-flex;
+    height: 300px;
+    margin: 40px 30px;
+       
+}
+
+.single-hotel-img {
+    width: 50%;
+    border-radius: 10px 0 0 10px;
+    @extend .background-shadow;
+}
+
+.single-hotel-img img {
+    width:100%;
+    object-fit: cover;
+    height: 300px;
+    border-radius: 10px 0 0 10px;
+}
+
+.single-hotel-details {
+    @extend .comon-flex;
+    width:50%;
+    background-color:getColour(complimentary-colour);
+    height: 300px;  
+    text-align: center; 
+    flex-direction: column; 
+    border-radius: 0 10px 10px 0;
+}
+
+
+.single-hotel-details h3 {
+    background-color: getColour(secondary-colour);
+    color: getColour(primary-colour);
+    padding: 5px 10px;    
+   
+}
+
+.subscription-form {
+    @extend .comon-flex;
+    @extend .background-shadow;
+    width: 95%;
+    margin: 30px;
+    height:200px ;
+    background-color: getColour(secondary-colour);
+    border-radius: 10px;
+    color: getColour(primary-colour);
+    
+}
+
+.subscription-form h5 {
+    text-align: center;
+}
+
+.subscription-form input{
+    text-decoration: none;
+    border: none;
+    width: 200px;
+    height: 30px;
+    border-radius: 5px;
+}
+
+.subscription-form button {
+    background-color: getColour(blue-navy);
+    border-radius: 5px;
+    border: 1px solid getColour(primary-colour) ;
+    width: 100px;
+    height: 30px;
+    color: getColour(primary-colour);
+    margin-left: 2px;
+
 }
