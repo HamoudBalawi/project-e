@@ -10,10 +10,12 @@ import InquiryDetails from "./pages/inquiry/InquiryDetails";
 import ContactMessage from "./pages/contactMessage/ContactMessage";
 import ContactMessageDetails from "./pages/contactMessage/ContactMessageDetails";
 import Establishment from "./pages/establishment/establishment";
+import About from "./pages/about/About";
 import Admin from "./pages/admin/Admin";
 import Nav from "./components/layout/Navigation";
 import { AuthProvider } from "./context/AuthContext";
 import "./sass/style.scss";
+import Footer from "./components/layout/Footer";
 
 function App() {
   return (
@@ -29,6 +31,9 @@ function App() {
           </Route>
           <Route path="/contact">
             <Contact />
+          </Route>
+          <Route path="/about">
+            <About />
           </Route>
           <Route path="/login">
             <Login />
@@ -55,6 +60,7 @@ function App() {
             <Establishment />
           </Route>
         </Switch>
+        <Footer />
       </Router>
     </AuthProvider>
   );

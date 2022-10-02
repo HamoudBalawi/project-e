@@ -1,9 +1,44 @@
-
-
 .stay-image {
-        width: 340px;
-        height: 340px;
-        object-fit: cover;
-        border-radius: 5px;
-        @extend .background-shadow;
+     width: 330px;
+     height: 330px;
+     object-fit: cover;
+     border-radius: 5px;
+     @extend .background-shadow;
+}
+
+.stay-common {
+    display: flex;
+
+}
+
+.stay {
+    margin-bottom: 10px;
+}
+
+.stay-details{
+    @extend .stay-common;  
+    justify-content: space-between;
+    width: 330px;
+    padding: 5px 0 0 0;
+    font-weight: 600;
+   
+}
+
+.stay-location {
+     @extend .stay-common;
+     padding: 0;
+     
+}
+
+.location-icon {
+     margin-top: 5px;
+
+}
+
+.stay p{
+     margin: 0;
+}
+
+.container-wrapper {
+    margin: 20px auto;
 }

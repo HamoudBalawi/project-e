@@ -10,7 +10,7 @@ import Loading from "../../../components/common/Loading";
 const API = process.env.REACT_APP_BASE_URL + "/api/banners/1?populate=image";
 
 export default function RenderBanner() {
-  const [stays, setStays] = useState([]);
+  const [banner, setBanner] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
@@ -19,7 +19,7 @@ export default function RenderBanner() {
       try {
         const response = await axios.get(API);
 
-        setStays(response.data.data);
+        setBanner(response.data.data);
       } catch (error) {
         setError(error.toString());
       } finally {
@@ -39,14 +39,14 @@ export default function RenderBanner() {
   }
   return (
     <>
-      {stays.attributes.image.data.map((stay) => {
+      {banner.attributes.image.data.map((item) => {
         return (
-          <div key={stays.id}>
+          <div key={banner.id}>
             <Link to={`stays`}>
               <div className="banner">
                 <button>Find yout stay</button>
-                <h1>{stays.attributes.slogan}</h1>
-                <img src={stay.attributes.url} alt={""} />
+                <h1>{banner.attributes.slogan}</h1>
+                <img src={item.attributes.url} alt={banner.attributes.slogan} />
               </div>
             </Link>
           </div>

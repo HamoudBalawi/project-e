@@ -56,15 +56,19 @@ export default function LoginForm() {
     <form onSubmit={handleSubmit(onSubmit)}>
       {loginError && <FormError>{loginError}</FormError>}
       <fieldset disabled={submitting}>
-        <label>Username</label>
-        <input name="identifier" placeholder="Username" {...register("identifier")} />
-        {errors.username && <span>{errors.username.message}</span>}
-
-        <label>Password</label>
-        <input name="password" placeholder="Password" {...register("password")} type="password" />
-        {errors.password && <span>{errors.password.message}</span>}
-
-        <button>{submitting ? "Loggin in..." : "Login"}</button>
+        <div className="form-contents">
+          <label>Username</label>
+          <input name="identifier" placeholder="Username" {...register("identifier")} />
+          {errors.username && <span>{errors.username.message}</span>}
+        </div>
+        <div className="form-contents">
+          <label>Password</label>
+          <input name="password" placeholder="Password" {...register("password")} type="password" />
+          {errors.password && <span>{errors.password.message}</span>}
+        </div>
+        <div className="form-contents">
+          <button>{submitting ? "Loggin in..." : "Login"}</button>
+        </div>
       </fieldset>
     </form>
   );

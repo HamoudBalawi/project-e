@@ -1,5 +1,11 @@
 import RenderStays from "../../components/renderContents/stays/RenderStays";
+import Heading from "../../components/layout/Heading";
 
 export default function Stays() {
-  return <RenderStays />;
+  return (
+    <>
+      <Heading content="Stays" />
+      <RenderStays />
+    </>
+  );
 }

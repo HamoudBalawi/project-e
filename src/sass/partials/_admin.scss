@@ -1,0 +1,30 @@
+.admin-contents{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    margin: 50px 30px;
+   
+}
+
+.admin-contents div {
+    background-color: getColour(primary-colour);
+    @extend .background-shadow;
+    @extend .common-flex;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+.content-link {
+    width: 250px;
+    height: 250px;
+    background-color: getColour(blue-navy);
+    border-radius: 50%;
+    @extend .background-shadow;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: getColour(primary-colour);
+    margin: 40px 0;
+    
+}
+

@@ -6,6 +6,7 @@ import { BASE_URL, INQUIRES } from "../../../constants/api";
 import axios from "axios";
 import FormError from "../../common/FormError";
 import SuccessMessage from "../../common/SuccessMessage";
+import { text } from "stream/consumers";
 
 const api = BASE_URL + INQUIRES;
 
@@ -59,38 +60,51 @@ export default function InquiryForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
-      <div className="success">{successMessage ? <SuccessMessage /> : null}</div>
+    <form className="inquiry-form" onSubmit={handleSubmit(onSubmit)}>
+      <div className="success">{successMessage ? <SuccessMessage>Inquiry Sent!</SuccessMessage> : null}</div>
       {inquiryError && <FormError>{inquiryError}</FormError>}
 
       <fieldset disabled={submitting}>
-        <label>Fullname</label>
-        <input name="fullname" placeholder="Fullname" {...register("fullname")} />
-        {errors.fullname && <span>{errors.fullname.message}</span>}
+        <div className="form-contents">
+          <label>Fullname</label>
+          <input name="fullname" placeholder="Fullname" {...register("fullname")} />
+          {errors.fullname && <span>{errors.fullname.message}</span>}
+        </div>
 
-        <label>Phone</label>
-        <input name="phone" placeholder="Phone" {...register("phone")} type="number" />
-        {errors.phone && <span>{errors.phone.message}</span>}
+        <div className="form-contents">
+          <label>Phone</label>
+          <input name="phone" placeholder="Phone" {...register("phone")} type="number" />
+          {errors.phone && <span>{errors.phone.message}</span>}
+        </div>
 
-        <label>Email</label>
-        <input name="email" placeholder="Email" {...register("email")} type="email" />
-        {errors.email && <span>{errors.email.message}</span>}
+        <div className="form-contents">
+          <label>Email</label>
+          <input name="email" placeholder="Email" {...register("email")} type="email" />
+          {errors.email && <span>{errors.email.message}</span>}
+        </div>
 
-        <label>Message</label>
-        <input name="message" placeholder="message" {...register("message")} type="text" />
-        {errors.message && <span>{errors.message.message}</span>}
+        <div className="form-contents">
+          <label>Check in</label>
+          <input name="checkin" placeholder="date" {...register("checkin")} type="date" />
+          {errors.checkin && <span>{errors.checkin.message}</span>}
+        </div>
 
-        <label>Check in</label>
-        <input name="checkin" placeholder="date" {...register("checkin")} type="date" />
-        {errors.checkin && <span>{errors.checkin.message}</span>}
+        <div className="form-contents">
+          <label>Check out</label>
+          <input name="checkout" placeholder="date" {...register("checkout")} type="date" />
+          {errors.checkout && <span>{errors.checkout.message}</span>}
+        </div>
 
-        <label>Check out</label>
-        <input name="checkout" placeholder="date" {...register("checkout")} type="date" />
-        {errors.checkout && <span>{errors.checkout.message}</span>}
+        <div className="form-contents">
+          <label>Message</label>
+          <input name="message" placeholder="message" {...register("message")} type="text" rows={7} cols={30} />
+          {errors.message && <span>{errors.message.message}</span>}
+        </div>
 
-        <button>{submitting ? "Submitting..." : "Submit"}</button>
+        <div className="form-contents">
+          <button>{submitting ? "Submitting..." : "Submit"}</button>
+        </div>
       </fieldset>
     </form>
   );
 }
-//<div className="message">{successMessage ? <p>{successMessage}</p> : null}</div>;

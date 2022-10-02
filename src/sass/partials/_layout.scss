@@ -33,6 +33,18 @@ body {
 .nav-links {
    margin: 7px 10px 0;
 }
+// admin, inquiry, establishment pages background 
+
+.background-cover {
+    background-image: url("../../images/background.jpg");
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+}
+
+.icons {
+    font-size: 30px;
+}
 
 .loading {
     text-align: center;
@@ -51,10 +63,26 @@ body {
     }
 }
 
+.heading {
+    background-color: getColour(primary-colour);
+    width: 200px;
+    border-radius: 0 50px 50px 0;
+    padding-left:10px;
+}
+
 .header {
     padding-left: 20px;
     @extend .background-shadow;
+}
 
+.common-flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar-expand-lg .navbar-nav .nav-link{
+    color: getColour(blue-navy);
 }
 
 .company-name {
@@ -65,6 +93,7 @@ body {
 .nav-common-style {
     position: absolute;
 }
+
 .login {
    @extend .nav-common-style;
     right: 15px;
@@ -75,14 +104,17 @@ body {
     @extend .nav-common-style;
     right: 110px;
 }
-.search-input input{
+.search-input input, input{
     text-decoration: none;
     border:1px solid getColour(light-grey-colour);
     border-radius: 5px;
-    height: 40px;
+    height: 35px;
     width: 200px;
     position: relative;
+}
 
+textarea {
+    border-radius: 5px;
 }
 
 .search-result {
@@ -122,3 +154,11 @@ footer p, footer h4 {
     @extend .footer-common-style;    
 }
 
+// inquiry, inquiry details, contact, contact message common style 
+
+.contents {
+    width: 70%;
+    margin: 50px auto;
+    border-radius: 10px;
+    background-color: getColour(primary-colour);
+}

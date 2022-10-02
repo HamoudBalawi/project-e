@@ -7,7 +7,6 @@ export default function Details() {
     <>
       <Heading content="Details" />
       <StayDetails />
-      <InquiryForm />
     </>
   );
 }

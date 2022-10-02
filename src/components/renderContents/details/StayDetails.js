@@ -3,6 +3,7 @@ import { useParams, useHistory } from "react-router-dom";
 import axios from "axios";
 import Loading from "../../common/Loading";
 import Carousel from "react-bootstrap/Carousel";
+import InquiryForm from "../../forms/inquiryForm/InquiryForm";
 // this is the wordpress api i created and used for this project
 //
 
@@ -47,17 +48,30 @@ export default function StayDetails() {
           <Carousel>
             {stay.attributes.image.data.map((images) => {
               return (
-                <Carousel.Item>
-                  <div key={stay.id}>
-                    <img src={images.attributes.url} alt={stay.attributes.name} />
-                  </div>
+                <Carousel.Item className="hotel-images">
+                  <img key={stay.id} src={images.attributes.url} alt={stay.attributes.name} />
                 </Carousel.Item>
               );
             })}
           </Carousel>
-          <div key={stay.id} className="wrapper">
-            <h2 key={stay.id}>{stay.attributes.name}</h2>
-            <p>{stay.attributes.description}</p>
+          <div className="hotel">
+            <div className="hotel-contents">
+              <div key={stay.id} className="hotel-details">
+                <div className="hotel-name-price">
+                  <h2 key={stay.id}>{stay.attributes.name}</h2>
+                  <p className="title">{stay.attributes.price + " nok/night"}</p>
+                </div>
+                <div className="hotel-location">
+                  <p>{"Address " + stay.attributes.location}</p>
+                  <p>{stay.attributes.distance + " km from center"}</p>
+                </div>
+                <div className="hotel-description">
+                  <p className="title">Description</p>
+                  <p>{stay.attributes.description}</p>
+                </div>
+              </div>
+              <InquiryForm />
+            </div>
           </div>
         </>
       ) : (
@@ -66,70 +80,3 @@ export default function StayDetails() {
     </>
   );
 }
-/* return (
-    <>
-      {loading ? (
-        <Loading />
-      ) : stay ? (
-        <>
-         
-            
-
-               
-                    <div key={index} className="image-wrapper">
-                      <img className="stay-image" src={images.attributes.url} alt={""} />
-                    </div>
-
-                
-                <h2 className="stays-title">{item.attributes.name}</h2>
-                <p>{item.attributes.distance + " km from center"}</p>
-                <p>{item.attributes.price + " nok/night"}</p>
-              </div>
-      
-    
-        </>
-      ) : (
-        setError(error)
-      )}
-    </>
-  );
-}
-/*<div className="detail-items">
-    <h2 key={animal.id}>{animal.title.rendered}</h2>
-    <img src={animal.featured_media_src_url} />
-    <h3>{animal.slug}</h3>
-    <p>{animal.yoast_head_json.og_description}</p>
-  </div>;
- 
- 
- 
-  {stay.data.map((item) => {
-     return (
-       <div key={item.id} className="wrapper">
-         {item.attributes.image.data.map((images, index) => {
-           return (
-             <div key={index} className="image-wrapper">
-               <img className="stay-image" src={images.attributes.url} alt={""} />
-             </div>
-           );
-         })}
-
-
-         <h2 className="stays-title">{item.attributes.name}</h2>
-         <p>{item.attributes.distance + " km from center"}</p>
-         <p>{item.attributes.price + " nok/night"}</p>
-       </div>
-     );
-   });
- }*/
-
-/*     {
-             stay.attributes.image.data.map((images, index) => {
-               console.log("this is stay" + stay.attributes);
-               return (
-                 <div key={index} className="image-wrapper">
-                   <img className="stay-image" src={images.attributes.url} alt={""} />
-                 </div>
-               );
-             });
-           }*/

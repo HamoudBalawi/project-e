@@ -6,6 +6,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import FormError from "../../common/FormError";
 import { BASE_URL, ESTABLISHMENT } from "../../../constants/api";
 import Loading from "../../common/Loading";
+import SuccessMessage from "../../common/SuccessMessage";
 
 const schema = yup.object().shape({
   name: yup.string().required("Please enter your name"),
@@ -23,6 +24,7 @@ const authKey = JSON.parse(localStorage.getItem("auth"));
 export default function EstablishmentForm() {
   const [submitting, setSubmitting] = useState(false);
   const [establishmentError, setEstablishmentError] = useState(null);
+  const [successMessage, setSuccessMessage] = useState(false);
 
   const history = useHistory();
 
@@ -69,6 +71,19 @@ export default function EstablishmentForm() {
       };
 
       const response = await fetch(api, options);
+      if (response.status === 200) {
+        setTimeout(() => {
+          let inputs = document.querySelectorAll("input");
+          inputs.forEach((input) => (input.value = ""));
+          setSuccessMessage(true);
+        }, 2000);
+
+        setTimeout(() => {
+          const success = document.querySelector(".success");
+
+          success.style.display = "none";
+        }, 4000);
+      }
     } catch (error) {
       console.log("error", error);
       setEstablishmentError(error.toString());
@@ -80,40 +95,59 @@ export default function EstablishmentForm() {
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       {establishmentError && <FormError>{establishmentError}</FormError>}
+      <div className="success">{successMessage ? <SuccessMessage>Added Successfuly</SuccessMessage> : null}</div>
       <fieldset disabled={submitting}>
-        <label>Establishment name</label>
-        <input name="name" placeholder="Fullname" {...register("name")} />
-        {errors.name && <span>{errors.name.message}</span>}
+        <div className="establishment-form">
+          <label>Establishment name</label>
+          <input name="name" placeholder="Establishment name" {...register("name")} />
+          {errors.name && <span>{errors.name.message}</span>}
+        </div>
 
-        <label>Phone</label>
-        <input name="telephone" placeholder="Phone" {...register("telephone")} type="number" />
-        {errors.telephone && <span>{errors.telephone.message}</span>}
+        <div className="establishment-form">
+          <label>Phone</label>
+          <input name="telephone" placeholder="Phone" {...register("telephone")} type="number" />
+          {errors.telephone && <span>{errors.telephone.message}</span>}
+        </div>
 
-        <label>Email</label>
-        <input name="email" placeholder="Email" {...register("email")} type="email" />
-        {errors.email && <span>{errors.email.message}</span>}
+        <div className="establishment-form">
+          <label>Email</label>
+          <input name="email" placeholder="Email" {...register("email")} type="email" />
+          {errors.email && <span>{errors.email.message}</span>}
+        </div>
 
-        <label>Price</label>
-        <input name="price" placeholder="price" {...register("price")} type="number" />
-        {errors.message && <span>{errors.price.message}</span>}
+        <div className="establishment-form">
+          <label>Price</label>
+          <input name="price" placeholder="price" {...register("price")} type="number" />
+          {errors.message && <span>{errors.price.message}</span>}
+        </div>
 
-        <label>location</label>
-        <input name="location" placeholder="location" {...register("location")} type="text" />
-        {errors.location && <span>{errors.location.message}</span>}
+        <div className="establishment-form">
+          <label>location</label>
+          <input name="location" placeholder="location" {...register("location")} type="text" />
+          {errors.location && <span>{errors.location.message}</span>}
+        </div>
 
-        <label>Description</label>
-        <input name="description" placeholder="description" {...register("description")} type="text" />
-        {errors.message && <span>{errors.description.message}</span>}
+        <div className="establishment-form">
+          <label>Distance</label>
+          <input name="distance" placeholder="distance" {...register("distance")} type="number" />
+          {errors.message && <span>{errors.distance.message}</span>}
+        </div>
 
-        <label>Distance</label>
-        <input name="distance" placeholder="distance" {...register("distance")} type="number" />
-        {errors.message && <span>{errors.distance.message}</span>}
+        <div className="establishment-form">
+          <label>Description</label>
+          <textarea name="description" placeholder="description" {...register("description")} rows={7} cols={40} type="text" />
+          {errors.message && <span>{errors.description.message}</span>}
+        </div>
 
-        <label>Image</label>
-        <input name="image" placeholder="upload" {...register("image")} accept="image/png, image/jpeg" multiple type="file" />
-        {errors.message && <span>{errors.image.message}</span>}
+        <div className="establishment-form">
+          <label>Image</label>
+          <input name="image" placeholder="upload" {...register("image")} accept="image/png, image/jpeg" multiple type="file" />
+          {errors.message && <span>{errors.image.message}</span>}
+        </div>
 
-        <button>{submitting ? <Loading /> : "Submit"}</button>
+        <div className="establishment-form">
+          <button>{submitting ? <Loading /> : "Submit"}</button>
+        </div>
       </fieldset>
     </form>
   );

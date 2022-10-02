@@ -32,6 +32,9 @@ function Navigation() {
           <NavLink to="/contact" className="nav-link">
             Contact
           </NavLink>
+          <NavLink to="/about" className="nav-link">
+            About
+          </NavLink>
           {auth ? (
             <>
               <NavLink to="/admin" className="nav-link">

@@ -59,12 +59,12 @@ export default function RenderInquiry() {
     <>
       {inquiries.map((inquiry) => {
         return (
-          <div key={inquiry.id} className="wrapper">
-            <Link to={`inquiryDetails/${inquiry.id}`}>
-              <p>{inquiry.attributes.fullname}</p>
+          <Link key={inquiry.id} to={`inquiryDetails/${inquiry.id}`}>
+            <div className="render-items">
+              <p className="render-name">{inquiry.attributes.fullname + " :"}</p>
               <p>{inquiry.attributes.message}</p>
-            </Link>
-          </div>
+            </div>
+          </Link>
         );
       })}
     </>

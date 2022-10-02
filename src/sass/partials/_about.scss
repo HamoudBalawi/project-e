@@ -1,0 +1,14 @@
+.about-style {
+    background-color: getColour(blue-navy);
+    width: 60%;
+    margin: 20px auto;  
+    border-radius: 20px; 
+}
+
+.about-style h2{
+    text-align: center;
+}
+.about-style > * {
+  color: getColour(primary-colour);
+  padding: 20px;
+}

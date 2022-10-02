@@ -1,0 +1,21 @@
+ .contents-style {
+   position: relative;
+ }
+  
+ .establishemnt-contents {
+    height: 1100px;
+ }
+
+ .establishment-form {
+    @extend .form-contents;
+ }
+ .return-icon {
+     position: absolute;
+     color: getColour(primary-colour);
+     left: 10px;
+     top: 10px;
+ }
+
+ .establishment-form input {
+    width: 250px;
+ }

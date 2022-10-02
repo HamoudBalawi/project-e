@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import FormError from "../../common/FormError";
 import Loading from "../../common/Loading";
 import { Container, Row, Col } from "react-bootstrap";
-
+import { IconName, ImLocation } from "react-icons/im";
 // This is the heroku api I created and used for this project
 // https://holidaze-heroku-api.herokuapp.com
 
@@ -40,23 +40,31 @@ export default function RenderStays() {
   }
   return (
     <>
-      <Container>
-        <Row>
-          {stays.map((stay) => {
-            return (
-              <Col>
-                <Link to={`details/${stay.id}`}>
-                  <img className="stay-image" src={stay.attributes.image.data[0].attributes.url} alt={stay.attributes.name} />
-
-                  <p className="stays-title">{stay.attributes.location}</p>
-                  <p>{stay.attributes.distance + " km from center"}</p>
-                  <p>{stay.attributes.price + " nok/night"}</p>
-                </Link>
-              </Col>
-            );
-          })}
-        </Row>
-      </Container>
+      <div className="container-wrapper">
+        <Container>
+          <Row>
+            {stays.map((stay) => {
+              return (
+                <Col>
+                  <Link to={`details/${stay.id}`}>
+                    <div className="stay">
+                      <img className="stay-image" src={stay.attributes.image.data[0].attributes.url} alt={stay.attributes.name} />
+                      <div className="stay-details">
+                        <div className="stay-location">
+                          <ImLocation className="location-icon" />
+                          <p>{stay.attributes.location}</p>
+                        </div>
+                        <p>{stay.attributes.price + " nok/night"}</p>
+                      </div>
+                      <p>{stay.attributes.distance + " km from center"}</p>
+                    </div>
+                  </Link>
+                </Col>
+              );
+            })}
+          </Row>
+        </Container>
+      </div>
     </>
   );
 }

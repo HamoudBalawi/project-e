@@ -56,13 +56,31 @@ export default function RenderSingleInquiry() {
       {loading ? (
         <Loading />
       ) : inquiry ? (
-        <div key={inquiry.id} className="wrapper">
-          <p>{inquiry.attributes.fullname}</p>
-          <p>{inquiry.attributes.email}</p>
-          <p>{inquiry.attributes.phone}</p>
-          <p>{inquiry.attributes.checkin}</p>
-          <p>{inquiry.attributes.checkout}</p>
-          <p>{inquiry.attributes.message}</p>
+        <div key={inquiry.id} className="inquiry-details">
+          <div className="comon-items-style">
+            <p>Name :</p>
+            <p>{inquiry.attributes.fullname}</p>
+          </div>
+          <div className="comon-items-style">
+            <p>Message :</p>
+            <p>{inquiry.attributes.message}</p>
+          </div>
+          <div className="comon-items-style">
+            <p>Email :</p>
+            <p>{inquiry.attributes.email}</p>
+          </div>
+          <div className="comon-items-style">
+            <p>Phone :</p>
+            <p> {inquiry.attributes.phone}</p>
+          </div>
+          <div className="comon-items-style">
+            <p>checkin :</p>
+            <p>{inquiry.attributes.checkin}</p>
+          </div>
+          <div className="comon-items-style">
+            <p>checkout :</p>
+            <p>{inquiry.attributes.checkout}</p>
+          </div>
         </div>
       ) : (
         setError(error)

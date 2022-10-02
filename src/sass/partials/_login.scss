@@ -1,0 +1,42 @@
+.contents-style {
+    @extend .common-flex;
+    flex-direction: column;
+    margin: 100px auto;
+    background-color: getColour(transparent-backgound);
+    width: 500px;
+    height: 500px;
+    border-radius: 10px;
+    color: getColour(primary-colour);
+    padding: 10px;
+
+}
+.login-contents {
+    @extend .contents-style;
+    height: 500px;
+}
+
+.form-contents {
+    width: 360px;
+    @extend .common-flex;
+    flex-direction: column;
+    padding: 10px 0;
+}
+
+.form-contents {
+    width: 250px;
+}
+
+.form-contents button {
+    text-decoration: none;
+    background-color: getColour(blue-navy);
+    color: getColour(primary-colour);
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 2px solid getColour(primary-colour);
+}
+
+.form-contents button:hover {
+    background-color: getColour(light-grey-colour);
+    color: getColour(blue-navy);
+}

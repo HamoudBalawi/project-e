@@ -58,9 +58,10 @@ export default function RenderInquiry() {
         return (
           <div key={item.id} className="wrapper">
             <Link to={`contactMessageDetails/${item.id}`}>
-              <p>{item.attributes.name}</p>
-              <p>{item.attributes.subject}</p>
-              <p>{item.attributes.message}</p>
+              <div className="render-items">
+                <p className="render-name">{item.attributes.subject}</p>
+                <p>{item.attributes.message}</p>
+              </div>
             </Link>
           </div>
         );

@@ -13,11 +13,9 @@ export default function Home() {
           <RenderSingleHotel />
           <p className="title destination-title">Top Destinations</p>
           <RenderLocations />
-
           <SubscriprtionForm />
         </div>
       </div>
-      <Footer />
     </>
   );
 }

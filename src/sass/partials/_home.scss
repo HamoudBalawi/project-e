@@ -52,22 +52,15 @@
     right:0;
     opacity: 60%;
     
-
 }
 
 .stays-names, .destination-title{
     padding-left: 40px;
 
 }
-.comon-flex {
-    display: flex;
-    justify-content: center;
-    align-items: center; 
-
-}
 
 .single-hotel {
-    @extend .comon-flex;
+    @extend .common-flex;
     height: 300px;
     margin: 40px 30px;
        
@@ -87,7 +80,7 @@
 }
 
 .single-hotel-details {
-    @extend .comon-flex;
+    @extend .common-flex;
     width:50%;
     background-color:getColour(complimentary-colour);
     height: 300px;  
@@ -105,7 +98,7 @@
 }
 
 .subscription-form {
-    @extend .comon-flex;
+    @extend .common-flex;
     @extend .background-shadow;
     width: 95%;
     margin: 30px;

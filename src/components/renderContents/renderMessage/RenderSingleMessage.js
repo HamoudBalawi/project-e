@@ -56,12 +56,27 @@ export default function RenderMessageDetails() {
       {loading ? (
         <Loading />
       ) : contact ? (
-        <div key={contact.id} className="wrapper">
-          <p>{contact.attributes.fullname}</p>
-          <p>{contact.attributes.subject}</p>
-          <p>{contact.attributes.phone}</p>
-          <p>{contact.attributes.email}</p>
-          <p>{contact.attributes.message}</p>
+        <div key={contact.id}>
+          <div className="comon-items-style">
+            <p>Name :</p>
+            <p>{contact.attributes.fullname}</p>
+          </div>
+          <div className="comon-items-style">
+            <p>Subject :</p>
+            <p>{contact.attributes.subject}</p>
+          </div>
+          <div className="comon-items-style">
+            <p>Message :</p>
+            <p>{contact.attributes.message}</p>
+          </div>
+          <div className="comon-items-style">
+            <p>Email :</p>
+            <p>{contact.attributes.email}</p>
+          </div>
+          <div className="comon-items-style">
+            <p>Phone :</p>
+            <p> {contact.attributes.phone}</p>
+          </div>
         </div>
       ) : (
         setError(error)
