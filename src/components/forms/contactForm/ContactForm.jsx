@@ -191,7 +191,7 @@ export default function InquiryForm() {
           {errors.subject && <span>{errors.subject.message}</span>}
         </div>
 
-        <div className="form-contents">
+        <div className="Message-input">
           <label>Message</label>
           <input name="message" placeholder="message" {...register("message")} type="text" />
           {errors.message && <span>{errors.message.message}</span>}

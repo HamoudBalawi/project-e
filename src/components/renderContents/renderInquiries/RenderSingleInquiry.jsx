@@ -2,15 +2,14 @@ import { useState, useEffect } from "react";
 import { useParams, useHistory } from "react-router-dom";
 import axios from "axios";
 import Loading from "../../common/Loading";
-import { CONTACTS } from "../../../constants/api";
-// this is the wordpress api i created and used for this project
-//
+import { INQUIRIES } from "../../../constants/api";
+
 const authKey = JSON.parse(localStorage.getItem("auth"));
 
 const API = process.env.REACT_APP_BASE_URL;
 
-export default function RenderMessageDetails() {
-  const [contact, setContact] = useState([]);
+export default function RenderSingleInquiry() {
+  const [inquiry, setInquiry] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
@@ -25,11 +24,11 @@ export default function RenderMessageDetails() {
   }
   console.log(authKey);
 
-  const API_URL = API + CONTACTS + "/" + id;
+  const API_URL = API + INQUIRIES + "/" + id;
 
   useEffect(
     function () {
-      async function getContact() {
+      async function getInquiry() {
         try {
           const options = {
             method: "GET",
@@ -39,7 +38,7 @@ export default function RenderMessageDetails() {
           };
           const response = await axios.get(API_URL, options);
 
-          setContact(response.data.data);
+          setInquiry(response.data.data);
           console.log(response.data.data);
         } catch (error) {
           setError(error.toString());
@@ -47,7 +46,7 @@ export default function RenderMessageDetails() {
           setLoading(false);
         }
       }
-      getContact();
+      getInquiry();
     },
     [API_URL]
   );
@@ -55,27 +54,31 @@ export default function RenderMessageDetails() {
     <>
       {loading ? (
         <Loading />
-      ) : contact ? (
-        <div key={contact.id}>
+      ) : inquiry ? (
+        <div key={inquiry.id} className="inquiry-details">
           <div className="comon-items-style">
             <p>Name :</p>
-            <p>{contact.attributes.fullname}</p>
-          </div>
-          <div className="comon-items-style">
-            <p>Subject :</p>
-            <p>{contact.attributes.subject}</p>
+            <p>{inquiry.attributes.fullname}</p>
           </div>
           <div className="comon-items-style">
             <p>Message :</p>
-            <p>{contact.attributes.message}</p>
+            <p>{inquiry.attributes.message}</p>
           </div>
           <div className="comon-items-style">
             <p>Email :</p>
-            <p>{contact.attributes.email}</p>
+            <p>{inquiry.attributes.email}</p>
           </div>
           <div className="comon-items-style">
             <p>Phone :</p>
-            <p> {contact.attributes.phone}</p>
+            <p> {inquiry.attributes.phone}</p>
+          </div>
+          <div className="comon-items-style">
+            <p>checkin :</p>
+            <p>{inquiry.attributes.checkin}</p>
+          </div>
+          <div className="comon-items-style">
+            <p>checkout :</p>
+            <p>{inquiry.attributes.checkout}</p>
           </div>
         </div>
       ) : (

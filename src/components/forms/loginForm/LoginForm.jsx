@@ -57,6 +57,7 @@ export default function LoginForm() {
       {loginError && <FormError>{loginError}</FormError>}
       <fieldset disabled={submitting}>
         <div className="form-contents">
+          <h3>Login</h3>
           <label>Username</label>
           <input name="identifier" placeholder="Username" {...register("identifier")} />
           {errors.username && <span>{errors.username.message}</span>}

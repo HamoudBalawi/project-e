@@ -133,7 +133,7 @@ export default function EstablishmentForm() {
           {errors.message && <span>{errors.distance.message}</span>}
         </div>
 
-        <div className="establishment-form">
+        <div className="Message-input">
           <label>Description</label>
           <input name="description" placeholder="description" {...register("description")} type="text" />
           {errors.message && <span>{errors.description.message}</span>}

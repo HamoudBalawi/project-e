@@ -5,8 +5,7 @@ import FormError from "../../common/FormError";
 import Loading from "../../common/Loading";
 import { Container, Row, Col } from "react-bootstrap";
 import { IconName, ImLocation } from "react-icons/im";
-// This is the heroku api I created and used for this project
-// https://holidaze-heroku-api.herokuapp.com
+
 
 const API = process.env.REACT_APP_BASE_URL + "/api/stays?populate=image";
 
@@ -39,7 +38,6 @@ export default function RenderStays() {
     return <FormError>{error}</FormError>;
   }
   return (
-    <>
       <div className="container-wrapper">
         <Container>
           <Row>
@@ -65,6 +63,6 @@ export default function RenderStays() {
           </Row>
         </Container>
       </div>
-    </>
+
   );
 }

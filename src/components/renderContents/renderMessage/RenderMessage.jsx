@@ -1,23 +1,20 @@
-import { useState, useEffect, useContext } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 import { Link, useHistory } from "react-router-dom";
-
-import AuthContext from "../../../context/AuthContext";
 import FormError from "../../common/FormError";
 import Loading from "../../common/Loading";
-import { INQUIRES } from "../../../constants/api";
+import { CONTACTS } from "../../../constants/api";
 // This is the heroku api I created and used for this project
 // https://holidaze-heroku-api.herokuapp.com
 
 const authKey = JSON.parse(localStorage.getItem("auth"));
 
-const API = process.env.REACT_APP_BASE_URL + INQUIRES;
+const API = process.env.REACT_APP_BASE_URL + CONTACTS;
 
 export default function RenderInquiry() {
-  const [inquiries, setInquiries] = useState([]);
+  const [contact, setContact] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  //const [auth, setAuth] = useContext(AuthContext)
 
   let history = useHistory();
   if (!authKey) {
@@ -25,7 +22,7 @@ export default function RenderInquiry() {
   }
 
   useEffect(function () {
-    async function getInquiry() {
+    async function getMessage() {
       try {
         const options = {
           method: "GET",
@@ -35,9 +32,8 @@ export default function RenderInquiry() {
         };
         const response = await axios.get(API, options);
 
-        setInquiries(response.data.data);
-        console.log(response.data.data);
-        // setAuth(response.data.data);
+        setContact(response.data.data);
+
       } catch (error) {
         setError(error.toString());
       } finally {
@@ -45,7 +41,7 @@ export default function RenderInquiry() {
       }
     }
 
-    getInquiry();
+    getMessage();
   }, []);
 
   if (loading) {
@@ -57,14 +53,16 @@ export default function RenderInquiry() {
   }
   return (
     <>
-      {inquiries.map((inquiry) => {
+      {contact.map((item) => {
         return (
-          <Link key={inquiry.id} to={`inquiryDetails/${inquiry.id}`}>
-            <div className="render-items">
-              <p className="render-name">{inquiry.attributes.fullname + " :"}</p>
-              <p>{inquiry.attributes.message}</p>
-            </div>
-          </Link>
+          <div key={item.id} className="wrapper">
+            <Link to={`contactMessageDetails/${item.id}`}>
+              <div className="render-items">
+                <p className="render-name">{item.attributes.subject}</p>
+                <p>{item.attributes.message}</p>
+              </div>
+            </Link>
+          </div>
         );
       })}
     </>

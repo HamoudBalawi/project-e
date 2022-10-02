@@ -2,12 +2,12 @@ import { useForm } from "react-hook-form";
 import { useState, useEffect } from "react";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { BASE_URL, INQUIRES } from "../../../constants/api";
+import { BASE_URL, INQUIRIES } from "../../../constants/api";
 import axios from "axios";
 import FormError from "../../common/FormError";
 import SuccessMessage from "../../common/SuccessMessage";
 
-const api = BASE_URL + INQUIRES;
+const api = BASE_URL + INQUIRIES;
 
 const schema = yup.object().shape({
   email: yup.string().required("Please enter an email address"),

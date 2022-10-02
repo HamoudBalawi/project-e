@@ -6,7 +6,7 @@ import Heading from "../../components/layout/Heading";
 export default function Establishment() {
   return (
     <div className="background-cover">
-      <div className="contents-style establishemnt-contents">
+      <div className="contents-style establishment-contents">
         <Link to={`admin`}>
           <FaBackspace className="icons return-icon" />
         </Link>

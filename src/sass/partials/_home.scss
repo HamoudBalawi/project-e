@@ -101,7 +101,7 @@
     @extend .common-flex;
     @extend .background-shadow;
     width: 95%;
-    margin: 30px;
+    margin: 20px;
     height:200px ;
     background-color: getColour(secondary-colour);
     border-radius: 10px;
@@ -129,5 +129,64 @@
     height: 30px;
     color: getColour(primary-colour);
     margin-left: 2px;
+
+}
+
+// For extremely small screen devices (550px and below) 
+
+@media only screen and (min-width: 220px) and (max-width:550px) {
+
+.banner h1 {
+    font-size: 19px;
+    top: 30%;
+    padding-left: 20px;
+}
+
+.banner button {
+     font-size: 19px;
+     margin-left: 20px;
+     top: 40%;
+     padding: 3px;
+
+ }
+.single-hotel {
+    display: block;
+    height: 480px;
+  
+}
+.single-hotel-img {
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+ 
+}
+
+.single-hotel-img img {
+    width: 100%; 
+    height: 300px;
+    border-radius: 10px 10px 0 0;
+}
+
+.single-hotel-details {
+    width: 100%;
+    height: 200px;
+    border-radius: 0 0 10px 10px;
+}
+
+.single-hotel-details h2, .single-hotel-details h3{
+    font-size: 21px;
+}
+
+.subscription-form {
+    margin: 7px;
+    flex-direction: column;
+}
+
+.destinations-items {
+   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+}
+
+.subscription-form h5 {
+    font-size: 19px;
+}
 
 }

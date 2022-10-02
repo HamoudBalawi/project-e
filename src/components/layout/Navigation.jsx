@@ -3,7 +3,7 @@ import { useHistory, NavLink } from "react-router-dom";
 import AuthContext from "../../context/AuthContext";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
-import SearchBar from "../../components/search/Search";
+import SearchBar from "../search/Search";
 
 function Navigation() {
   const [auth, setAuth] = useContext(AuthContext);

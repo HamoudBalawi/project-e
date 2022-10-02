@@ -8,7 +8,6 @@
 
 .stay-common {
     display: flex;
-
 }
 
 .stay {
@@ -40,5 +39,22 @@
 }
 
 .container-wrapper {
-    margin: 20px auto;
+     margin: 20px auto;
+}
+
+// Breaking point Medium screen devices (668px and above) 
+
+@media only screen and (min-width: 668px) and (max-width:768px) {
+
+.stay {
+      margin: 5px 70px;
+    }
+}
+
+// For extremely small screen devices (595px and below) 
+@media only screen and (min-width: 360px) and (max-width:667px) {
+
+.stay {
+        margin: 5px 0px;
+    }
 }

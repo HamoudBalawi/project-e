@@ -68,6 +68,7 @@ body {
     width: 200px;
     border-radius: 0 50px 50px 0;
     padding-left:10px;
+    font-size: 21px;
 }
 
 .header {
@@ -96,7 +97,7 @@ body {
 
 .login {
    @extend .nav-common-style;
-    right: 15px;
+    right: 5px;
     top: 8px;
 }
 
@@ -104,6 +105,7 @@ body {
     @extend .nav-common-style;
     right: 110px;
 }
+
 .search-input input, input{
     text-decoration: none;
     border:1px solid getColour(light-grey-colour);
@@ -111,6 +113,8 @@ body {
     height: 35px;
     width: 300px;
     position: relative;
+    margin: 0 auto;
+    
 }
 
 textarea {
@@ -127,6 +131,20 @@ textarea {
     z-index: 1;
     margin-top: -2px;
     padding-left:10px ;
+}
+
+.Message-input {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+}
+
+.Message-input input{ 
+   height: 250px;
+   width: 300px;
+    
+ 
 }
 
 .footer-common-style {
@@ -169,12 +187,11 @@ footer p, footer h4 {
 .form-error {
     @extend .resonse-common;
     background-color: getColour(secondary-colour);
-
 }
 
-
-
-
+.form-error span{
+    background-color: getColour(secondary-colour);
+}
 
 // inquiry, inquiry details, contact, contact message common style 
 
@@ -183,4 +200,31 @@ footer p, footer h4 {
     margin: 50px auto;
     border-radius: 10px;
     background-color: getColour(primary-colour);
+}
+
+// Breakingpoints 
+@media only screen and (min-width: 668px) and (max-width: 1000px) {
+   
+.login {
+    right: 70px;
+    top: 8px;
+}
+
+.search {
+    position: static;
+   
+}
+
+}
+// For extremely small screen devices (550px and below) 
+
+@media only screen and (min-width: 220px) and (max-width:667px) {
+
+.login {
+    right: 70px;    
+}
+
+.search {
+     position: static;
+}
 }

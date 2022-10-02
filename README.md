@@ -1,76 +1,119 @@
-# JS Frameworks Course Assignment
+# This is the heroku api I created and used for this project
+
+# API https://holidaze-heroku-api.herokuapp.com
+
+# website username madani
+
+# passowrd heroku123
+
+# Incase tuter would like strapi deployed in heroku can access it (It is created only for study purposes)
+
+# username mohammedmadani87@icloud.com
+
+# password Onekey123
+
+# Project Exam 2
+
+There are two options with this Project Exam.
+You need to only choose one and please follow the deliveries carefully.
+
+## Goal
+
+To take the skills learned over the last two years and take on an extensive project where the finished product should reflect the candidate's general development capabilities, in addition to visual and technical skills.
 
 ## Brief
 
-Create either a new React or Next.js app in this repo.
+For this assignment you have the choice between getting a real world client that you will manage and build a website for, or a case study to make a hotel booking website.
 
-For the login functionality, use either a Wordpress installation with the <a href="https://wordpress.org/plugins/jwt-authentication-for-wp-rest-api/" target="_blank">JWT plugin from Module 3</a> installed, or a Strapi installation. Do not add either of these to your repo. Your API should remain a separate project. The markers will use their own installations when marking.
+Whatever project you choose, the final submission must have the following:
 
-You can use either a REST or GraphQL API for the API calls.
+- A Gantt chart planning the project
+- A style guide
+- An Adobe XD prototype
+- Use a CSS Pre-processor and BEM if not using CSS Modules, Styled Components, etc
+- Use a React.js or Next.js
+- You can use regular JS or TypeScript
+- Please use create-react-app or create-next-app to generate a skeleton project for yourself
+- A fully working website that fulfils the brief
 
----
+## Option 1: Real World Client
 
-## Level 1
+Make a website or application for a real world client. The project should offer a significant enough scope to be able to show off your skills as a developer, and hopefully the project can form a central part of your portfolio for when you start applying for jobs.
 
-Your app should have the following paths:
+The process followed for the project will differ depending on the client and the requirements of their project.
 
--   "/"
--   "/detail/:param"
--   "/contact"
--   "/login"
--   "/admin"
+Note: The project has to have a big enough scope to show off the skills learned over your studies. An example of the level we’re expecting would be a website where administrators can add, update, remove products, and users can search, filter, and contact administrators. If you are unsure if your potential client’s brief is strong enough for the Project Exam 2, please message your tutors. Use of a JavaScript Framework is a requirement.
 
-The admin path won't appear in your navigation.
+### Recommended Process
 
-Use reusable components where appropriate and pay attention to how the components are arranged.
+Week 1 to 3: Finding client, Planning and Design
+Week 4 to 6: Coding
+Week 7: Bug Fixing
 
-### Home
+### Level 1 Process
 
-Find an API that returns at least:
+- Use your networks and connections to find a client that needs a website or application built.
+- Understand their requirements and come up with a functional specification for the project. You can write the functional specification using “System shall” statements. For example, “The system shall allow visitors to search for an article”
+- Create a Gantt chart for the project, planning out your deliverables for the client.
+- Make a design style guide and then take this style guide and create an Adobe XD prototype. Present to the client for feedback.
+- Develop the site ensuring you deliver all that is listed in your functional specification.
+- Test the website on various platforms and browsers. Ensure the site is bug-free and working before presenting to the client.
+- Go through a final round of changes before going live with the website.
+- Write a report on your process and decisions for the project. Please use the report template provided.
 
--   an array of items
--   a single item retrieved by a parameter (id, name, slug, etc)
+### Submission
 
-If you are using Next you can also hard-code json and return it from API routes created in `pages/api/*`.
+End of week 3: Functional specification, Gantt chart, style guide, and Adobe XD prototype
+End of week 7: Report with link to website, and all files in a compressed ZIP
 
-You can use your own Wordpress or Strapi or any other API that you have created for these calls but it must be publically hosted - it must not be running on your localhost.
+## Option 2: Hotel Booking Website
 
-Display at least 2 properties from each result.
+A local tourism agency in Bergen is launching a new website called ‘Holidaze’ for visitors to the area to be able to find hotels, B&Bs and guesthouses, and for the accommodation owners to receive enquiries.
 
-Each result should link to the detail page, passing a parameter in the URL.
+The project requires you to create the visitor side of the website where users can search accommodation and make enquiries, as well as the administration side where properties can be added and enquiries managed.
 
-### Detail
+You will need to create an API to store the data for the establishments, enquiries and contact submissions. You can choose to use WordPress or Strapi as a Headless CMS, but it is very important that the API is deployed and publicly available. Please do not submit any files for your API. Only submit the website you have created.
 
-Retrieve the parameter from the URL and use it in an API call to fetch one item.
+## Requirements for the Website
 
-Display at least 3 properties from the item.
+### Visitor Side
 
-### Contact
+- Homepage
+- Search bar typeahead (auto dropdown with hotel names that match what has been typed)
+- A results page with all hotels
+- The hotel specific page which displays all details about the hotel
+- An enquiry page either modal or separate page
+- A contact page (different to enquiry page) which goes to the admin for Holidaze
 
-Create a form with the following inputs and validation:
+### Admin side
 
--   First name - required, minimum 3 characters
--   Last name - required, minimum 4 characters
--   Email - required, must be in a valid email format
--   Subject - required, this must be a select box with at least 2 options
--   Message - required, minimum 10 characters.
+- Create a login section that makes use of JWT tokens
+- List of enquiries and new enquiries appear when user submits the form on the enquiry page
+- List of messages from contact form
+- The admin can create a new establishment
 
-### Login
+### Recommended Process
 
-Create a form with username/email and password fields. The inputs should have the necessary validation for a login form (not a registration form).
+Week 1 and 2: Planning and Design
+Week 3 to 6: Coding
+Week 7: Bug Fixing
 
-The form should make a login request to either a Wordpress API with the JWT plugin installed or a Strapi API. If the login is successful redirect the user to the admin route.
+### Level 1 Process
 
-If the login is unsuccessful display a message above the form.
+- Start by planning out the project.
+- Next begin your research of likely users and browse competitor websites for ideas.
+- Create a style guide
+- Build an Adobe XD prototype (or you can use Sketch or Figma).
+- Start coding.
+- Once you’ve finished development, start looking for bugs and ensure the site functions well on all viewports. Test the code on different devices. Because your API is public, the code shouldn’t rely on a local API.
+- Refactor your code.
+- Ask another student to look over your code and ask them if they can see how it might be better implemented. This is important to get an outside view on your code. Please attach this feedback to your report.
+- Add the login details for your admin side at the top of this README.md file so that it's easy for the marker to spot.
 
-### Admin
+### Submission
 
-This page will simply display an "Admin" heading.
+End of week 7: Report with link to website or a Github link and feedback from code review, and all files in a compressed ZIP. Login details added to the README.md.
 
----
+### Resources
 
-## Level 2
-
-Add a favourite button/icon component to each result on your home page. Clicking this button will toggle the result in/out of a favourites array.
-
-Add a "/favourites" path to your routes. This page will display all the items currently in the favourites array.
+Report template included in the repo.
