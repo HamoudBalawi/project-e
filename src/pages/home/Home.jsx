@@ -7,7 +7,6 @@ import Heading from "../../components/layout/Heading";
 
 export default function Home() {
   return (
-    <>
       <div className="wrapper">
         <div className="body-container">
           <Heading content="Home" />
@@ -18,6 +17,5 @@ export default function Home() {
           <SubscriprtionForm />
         </div>
       </div>
-    </>
   );
 }

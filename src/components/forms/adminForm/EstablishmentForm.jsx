@@ -48,7 +48,6 @@ export default function EstablishmentForm() {
       const formData = new FormData();
       formData.append("files.image", data.image[0]);
 
-      // data.image[0].name;
       const body = JSON.stringify({
         name: data.name,
         telephone: data.telephone,

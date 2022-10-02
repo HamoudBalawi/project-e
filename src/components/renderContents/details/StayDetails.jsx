@@ -4,8 +4,7 @@ import axios from "axios";
 import Loading from "../../common/Loading";
 import Carousel from "react-bootstrap/Carousel";
 import InquiryForm from "../../forms/inquiryForm/InquiryForm";
-// this is the wordpress api i created and used for this project
-//
+
 
 const API = process.env.REACT_APP_BASE_URL + "/api/stays";
 

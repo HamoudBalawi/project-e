@@ -1,3 +1,5 @@
+# Deployed react app on netlify https://pro-holidaze.netlify.app/
+
 # This is the heroku api I created and used for this project
 
 # API https://holidaze-heroku-api.herokuapp.com

@@ -5,7 +5,6 @@ import { BiPlusCircle } from "react-icons/bi";
 
 export default function Admin() {
   return (
-    <>
       <div className="background-cover">
         <Heading content="Admin" />
         <div className="admin-contents">
@@ -29,6 +28,6 @@ export default function Admin() {
           </div>
         </div>
       </div>
-    </>
+
   );
 }

@@ -1,7 +1,7 @@
 .contents-style {
     @extend .common-flex;
     flex-direction: column;
-    margin: 100px auto;
+    margin: 20px auto;
     background-color: getColour(transparent-backgound);
     width: 500px;
     height: 500px;
@@ -39,4 +39,17 @@
 .form-contents button:hover {
     background-color: getColour(light-grey-colour);
     color: getColour(blue-navy);
+}
+
+// For extremely small screen devices (550px and below) 
+
+@media only screen and (min-width: 220px) and (max-width:667px) {
+.form-contents {
+        width: 90%;
+    }
+.contents-style, .login-contents {
+        width:95%;
+        height: 500px;
+  
+    }
 }
