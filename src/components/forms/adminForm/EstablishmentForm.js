@@ -6,7 +6,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import FormError from "../../common/FormError";
 import { BASE_URL, ESTABLISHMENT } from "../../../constants/api";
 import Loading from "../../common/Loading";
-import SuccessMessage from "../../common/SuccessMessage";
+import AddSuccess from "../../common/AddSuccess";
 
 const schema = yup.object().shape({
   name: yup.string().required("Please enter your name"),
@@ -24,7 +24,7 @@ const authKey = JSON.parse(localStorage.getItem("auth"));
 export default function EstablishmentForm() {
   const [submitting, setSubmitting] = useState(false);
   const [establishmentError, setEstablishmentError] = useState(null);
-  const [successMessage, setSuccessMessage] = useState(false);
+  const [addSuccess, setAddSuccess] = useState(false);
 
   const history = useHistory();
 
@@ -75,14 +75,14 @@ export default function EstablishmentForm() {
         setTimeout(() => {
           let inputs = document.querySelectorAll("input");
           inputs.forEach((input) => (input.value = ""));
-          setSuccessMessage(true);
+          setAddSuccess(true);
         }, 2000);
 
         setTimeout(() => {
-          const success = document.querySelector(".success");
+          const success = document.querySelector(".success-message");
 
           success.style.display = "none";
-        }, 4000);
+        }, 5000);
       }
     } catch (error) {
       console.log("error", error);
@@ -94,9 +94,9 @@ export default function EstablishmentForm() {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
-      {establishmentError && <FormError>{establishmentError}</FormError>}
-      <div className="success">{successMessage ? <SuccessMessage>Added Successfuly</SuccessMessage> : null}</div>
       <fieldset disabled={submitting}>
+        {establishmentError && <FormError>{establishmentError}</FormError>}
+        <div className="success-message">{addSuccess ? <AddSuccess /> : null}</div>
         <div className="establishment-form">
           <label>Establishment name</label>
           <input name="name" placeholder="Establishment name" {...register("name")} />
@@ -135,7 +135,7 @@ export default function EstablishmentForm() {
 
         <div className="establishment-form">
           <label>Description</label>
-          <textarea name="description" placeholder="description" {...register("description")} rows={7} cols={40} type="text" />
+          <input name="description" placeholder="description" {...register("description")} type="text" />
           {errors.message && <span>{errors.description.message}</span>}
         </div>
 
@@ -146,7 +146,7 @@ export default function EstablishmentForm() {
         </div>
 
         <div className="establishment-form">
-          <button>{submitting ? <Loading /> : "Submit"}</button>
+          <button>{submitting ? "Wait.." : "Submit"}</button>
         </div>
       </fieldset>
     </form>

@@ -49,7 +49,7 @@ export default function StayDetails() {
             {stay.attributes.image.data.map((images) => {
               return (
                 <Carousel.Item className="hotel-images">
-                  <img key={stay.id} src={images.attributes.url} alt={stay.attributes.name} />
+                  <img src={images.attributes.url} alt={stay.attributes.name} />
                 </Carousel.Item>
               );
             })}
@@ -58,7 +58,7 @@ export default function StayDetails() {
             <div className="hotel-contents">
               <div key={stay.id} className="hotel-details">
                 <div className="hotel-name-price">
-                  <h2 key={stay.id}>{stay.attributes.name}</h2>
+                  <h2>{stay.attributes.name}</h2>
                   <p className="title">{stay.attributes.price + " nok/night"}</p>
                 </div>
                 <div className="hotel-location">

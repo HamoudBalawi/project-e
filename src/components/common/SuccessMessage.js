@@ -1,3 +1,3 @@
-export default function SuccessMessage({ props }) {
-  return <div className="message">{props}</div>;
+export default function SuccessMessage() {
+  return <div className="response-message">Message Sent!</div>;
 }

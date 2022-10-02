@@ -6,7 +6,6 @@ import { BASE_URL, INQUIRES } from "../../../constants/api";
 import axios from "axios";
 import FormError from "../../common/FormError";
 import SuccessMessage from "../../common/SuccessMessage";
-import { text } from "stream/consumers";
 
 const api = BASE_URL + INQUIRES;
 
@@ -46,10 +45,10 @@ export default function InquiryForm() {
         }, 2000);
 
         setTimeout(() => {
-          const success = document.querySelector(".success");
+          const success = document.querySelector(".success-message");
 
           success.style.display = "none";
-        }, 4000);
+        }, 5000);
       }
     } catch (error) {
       console.log("error", error);
@@ -61,11 +60,12 @@ export default function InquiryForm() {
 
   return (
     <form className="inquiry-form" onSubmit={handleSubmit(onSubmit)}>
-      <div className="success">{successMessage ? <SuccessMessage>Inquiry Sent!</SuccessMessage> : null}</div>
-      {inquiryError && <FormError>{inquiryError}</FormError>}
-
       <fieldset disabled={submitting}>
+        {inquiryError && <FormError>{inquiryError}</FormError>}
+        <div className="success-message">{successMessage ? <SuccessMessage /> : null}</div>
+
         <div className="form-contents">
+          <h3>Reservation Inquiry</h3>
           <label>Fullname</label>
           <input name="fullname" placeholder="Fullname" {...register("fullname")} />
           {errors.fullname && <span>{errors.fullname.message}</span>}
@@ -97,12 +97,12 @@ export default function InquiryForm() {
 
         <div className="form-contents">
           <label>Message</label>
-          <input name="message" placeholder="message" {...register("message")} type="text" rows={7} cols={30} />
+          <input name="message" placeholder="message" {...register("message")} type="text" />
           {errors.message && <span>{errors.message.message}</span>}
         </div>
 
         <div className="form-contents">
-          <button>{submitting ? "Submitting..." : "Submit"}</button>
+          <button>{submitting ? "Wait.." : "Submit"}</button>
         </div>
       </fieldset>
     </form>

@@ -10,7 +10,7 @@ export default function Establishment() {
         <Link to={`admin`}>
           <FaBackspace className="icons return-icon" />
         </Link>
-        <Heading content="Add Establishment" />
+        <h3>Add Establishment</h3>
         <AddEstablishment />
       </div>
     </div>

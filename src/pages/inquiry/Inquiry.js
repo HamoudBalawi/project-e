@@ -9,7 +9,7 @@ export default function Inquiry() {
         <Link to={`admin`}>
           <FaBackspace className="icons inquiry-icon" />
         </Link>
-        <h4>Reservation Inquiry</h4>
+
         <RenderInquiries />
       </div>
     </div>
