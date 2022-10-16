@@ -46,7 +46,7 @@ npm install
 To start, run the following commands:
 
 ```bash
-npm run strat
+npm run start
 ```
 
 ### develop
@@ -72,19 +72,3 @@ serve -s build
 [Instagram](https://www.instagram.com/hamoud_balawi/)
 
 [Back To The Top](#eco-shoe)
-
-# Deployed react app on netlify https://pro-holidaze.netlify.app/
-
-# This is the heroku api I created and used for this project
-
-# API https://holidaze-heroku-api.herokuapp.com
-
-# website username madani
-
-# passowrd heroku123
-
-# Incase tuter would like strapi deployed in heroku can access it (It is created only for study purposes)
-
-# username mohammedmadani87@icloud.com
-
-# password Onekey123
