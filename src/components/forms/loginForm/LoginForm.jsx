@@ -44,6 +44,7 @@ export default function LoginForm() {
 
       setAuth(response.data);
       history.push("/admin");
+      console.log(response.data)
     } catch (error) {
       console.log("error", error);
       setLoginError(error.toString());

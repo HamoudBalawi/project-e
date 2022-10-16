@@ -1,3 +1,85 @@
+# Project Exam 2
+
+![](src/images/holidaze-image.jpg)
+
+Save me an organiztion that provides protection to endangered animals across the glob.
+
+### Table of Contents
+
+- [Description](#description)
+- [Built With](#built-with)
+- [Getting Started](#getting-started)
+- [Contact](#contact)
+
+## Description
+
+This project to creat a website for an organiztion that provides protection to endangered animals across the glob due to the concerning pollution.
+
+- To provide protection
+- To provide medical support
+
+## Built With
+
+- [React-Bootstrap](https://react-bootstrap.github.io/)
+- [React](https://reactjs.org)
+
+## Getting Started
+
+### Installing
+
+1. Clone the repo:
+
+```bash
+git clone https://github.com/Noroff-FEU-Assignments/js-frameworks-course-assignment-HamoudBalawi
+```
+
+2. Install the dependencies:
+
+To install NPM packages, run the following commands:
+
+```bash
+npm install
+# or
+npm install yarn
+
+```
+
+### develop
+
+To develop, run the following commands:
+
+```bash
+npm run develop
+# or
+yarn run develop
+```
+
+### start
+
+To start, run the following commands:
+
+```bash
+npm run strat
+# or
+yarn start
+```
+
+### build
+
+To build, run the following commands:
+
+```bash
+npm run start
+# or
+yarn run start
+```
+
+## Contact
+
+[Instagram](https://www.instagram.com/hamoud_balawi/)
+
+[Back To The Top](#eco-shoe)
+
 # Deployed react app on netlify https://pro-holidaze.netlify.app/
 
 # This is the heroku api I created and used for this project
@@ -114,7 +196,8 @@ Week 7: Bug Fixing
 
 ### Submission
 
-End of week 7: Report with link to website or a Github link and feedback from code review, and all files in a compressed ZIP. Login details added to the README.md.
+End of week 7: Report with link to website or a
+Github link and feedback from code review, and all files in a compressed ZIP. Login details added to the README.md.
 
 ### Resources
 

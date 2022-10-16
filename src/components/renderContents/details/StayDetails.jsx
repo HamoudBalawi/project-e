@@ -28,6 +28,8 @@ export default function StayDetails() {
           const response = await axios.get(API_URL);
 
           setStay(response.data.data);
+
+
         } catch (error) {
           setError(error.toString());
         } finally {
@@ -46,6 +48,7 @@ export default function StayDetails() {
         <>
           <Carousel>
             {stay.attributes.image.data.map((images) => {
+              console.log(typeof(stay.id))
               return (
                 <Carousel.Item className="hotel-images">
                   <img src={images.attributes.url} alt={stay.attributes.name} />
