@@ -2,6 +2,8 @@
 
 ![](src/images/holidaze-image.jpg)
 
+### Holidaze
+
 This project is to create a webiste for a local tourism agency in Bergen called ‘Holidaze’.
 
 ### Table of Contents
