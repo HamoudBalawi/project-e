@@ -22,6 +22,7 @@ This project to creat a website for an organiztion that provides protection to e
 
 - [React-Bootstrap](https://react-bootstrap.github.io/)
 - [React](https://reactjs.org)
+- [Sass](https://sass-lang.com/)
 
 ## Getting Started
 
