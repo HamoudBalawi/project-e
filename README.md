@@ -22,7 +22,7 @@ This project is to create a website for a local tourism agency in Bergen called 
 ## Built With
 
 - [React-Bootstrap](https://react-bootstrap.github.io/)
-- [React](https://reactjs.org)
+- [React.js](https://reactjs.org)
 - [Sass](https://sass-lang.com/)
 
 ## Getting Started
