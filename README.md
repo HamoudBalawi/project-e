@@ -15,8 +15,7 @@ This project is to create a webiste for a local tourism agency in Bergen called 
 
 This project is to create a website for a local tourism agency in Bergen called ‘Holidaze’ for visitors to the area to be able to find hotels, B&Bs and guesthouses, and for the accommodation owners to receive enquiries. as well as the administration side where properties can be added and enquiries managed.
 
-- To provide protection
-- To provide medical support
+- To provide visitors find accommodation
 
 ## Built With
 
